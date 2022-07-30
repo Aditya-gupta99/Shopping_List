@@ -15,9 +15,8 @@ class ShoppingListAdapter(
 ): RecyclerView.Adapter<ShoppingListAdapter.ShoppingViewHolder>() {
 
     inner class ShoppingViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-
     }
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.shopping_item,
             parent,
@@ -29,7 +28,7 @@ class ShoppingListAdapter(
     override fun onBindViewHolder(holder: ShoppingViewHolder, position: Int) {
         val curShoppingItem = item[position]
 
-        holder.itemView.tvName.text = curShoppingItem.toString()
+        holder.itemView.tvName.text = curShoppingItem.name
         holder.itemView.tvAmount.text = "${curShoppingItem.amount}"
 
         holder.itemView.ivDelete.setOnClickListener {
